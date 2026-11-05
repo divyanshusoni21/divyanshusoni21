@@ -1,6 +1,9 @@
-- Backend Engineer experienced building and maintaining `Python/Django` systems end-to-end. 
-- Tech Stacks : `PostgreSQL`, `Celery`, `Docker`.
-- Have Worked on `Whatsapp Cloud Apis` to build a fully functional Whatsapp BSP enabling Live Chat (using `Webhooks and SSE`) and Campaign creation (sending upto `5000 messages`). 
-- Architected an automated news ingestion cron pipeline running every 5min. Scrapes the feed url, does `deduplication`, filtering and tag assignment, fires an `OpenAi llm` api call for sentiment analysis. Uses `Threadpoolexecutor` for concurrency. ([https://dailystockhunt.com](https://dailystockhunt.com))
-- Created a personal project to be able to clip a youtube video with it's url and desired time-range ([https://yt-vidclipper-fe.vercel.app](https://yt-vidclipper-fe.vercel.app)).
-- Made the async tasks crash-resilient with Celery's `task_acks_late`, `prefetch_multiplier`, `hard/soft time limits` and memory-efficient batching (`bulk_create`, ORM chunk iterators) to eliminate memory spikes.
+- Backend Engineer experienced building and maintaining `Python/Django` systems end-to-end. Tech Stacks : `PostgreSQL`, `Celery`, `Docker`.
+
+- Have Worked on `Whatsapp Cloud APIs` to build a fully functional Whatsapp BSP enabling Live Chat (using `Webhooks and SSE`) and Campaign creation (sending upto `5000 messages`).
+  
+- Architected an automated news ingestion cron pipeline running every 5min. Scrapes the feed url, does `deduplication`, filtering and tag assignment, fires an `OpenAI API` call for sentiment analysis. Uses `ThreadPoolExecutor` for concurrency. ([https://dailystockhunt.com](https://dailystockhunt.com))
+  
+- Created a personal project to be able to clip a youtube video with its url and desired time-range ([https://yt-vidclipper-fe.vercel.app](https://yt-vidclipper-fe.vercel.app)). Uses two celery queues `video`(video clipping, video speed manipulation) and `default`(email, cleanup old files), Containerized with Docker, Hosted on DigitalOcean, `CI/CD` with GitHub Actions
+  
+- Well-versed in production Celery resilience and performance tuning (`task_acks_late`, `worker_prefetch_multiplier=1`, `soft/hard time limits`, `task_reject_on_worker_lost`, and handling poison pill tasks).
